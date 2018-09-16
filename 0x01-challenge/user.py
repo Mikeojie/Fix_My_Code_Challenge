@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-""" 
+"""
 User class
 """
+
 
 class User():
     """ Documentation """
 
-    def __init__(self):
+    def __init__(self, email=None):
         """ Documentation """
-        self.__email = None
+        self.__email = email
+
+    @property
+    def email(self):
+        """ Documentation """
+        return self.__email
 
     @email.setter
     def email(self, value):
@@ -17,14 +23,9 @@ class User():
             raise TypeError("email must be a string")
         self.__email = value
 
-    @property
-    def email(self):
-        """ Documentation """
-        return self.__email
-   
-    
-if __name__ == "__main__":
 
+
+if __name__ == "__main__":
     u = User()
     u.email = "john@snow.com"
     print(u.email)
