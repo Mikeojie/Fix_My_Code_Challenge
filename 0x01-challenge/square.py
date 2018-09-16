@@ -4,7 +4,7 @@
 class Square():
     """Documentation"""
 
-    def __init__(self, width=None, height=None):
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
@@ -18,22 +18,14 @@ class Square():
 
     @width.setter
     def width(self, value):
-        if not value:
-            raise TypeError('Width cannot be None')
-        elif not isinstance(value, int):
-            raise TypeError('Width has to be an integer')
-        elif value < 1:
+        if value < 1:
             raise ValueError('Width must be greater than 0')
         else:
             self.__width = value
 
     @height.setter
     def height(self, value):
-        if not value:
-            raise TypeError('Height cannot be None')
-        elif not isinstance(value, int):
-            raise TypeError('Height has to be an integer')
-        elif value < 1:
+        if value < 1:
             raise ValueError('Height must be greater than 0')
         else:
             self.__height = value
